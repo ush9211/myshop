@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>myShop</title>
+  <!--Mobile-->
+  <link rel="apple-touch-icon" sizes="57x57" href="images/favicon/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="images/favicon/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="images/favicon/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="images/favicon/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="images/favicon/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="images/favicon/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="images/favicon/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="images/favicon/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="images/favicon/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="images/favicon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+
+  <link rel="icon" type="image/x-icon" href="images/favicon/favicon.ico">
+  <meta name="description" content="java를 이용한 쇼핑몰 연습">
+  <meta name="keywords" content="html, css, javascript, bootstrap, java">
+  <meta name="author" content="wein Lee">
+  <!--stylesheet -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;200;300;400;500;600;700;800;900&family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.1.0/remixicon.min.css" integrity="sha512-i5VzKip7owqOGjb0YTF8MR2J9yBVO3FLHeazKzLp354XYTmKcqEU3UeFYUw82R8tV6JqxeATOfstCfpfPhbyEA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="css/animate.min.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/root.css">
+  <link rel="stylesheet" href="css/style.css">
+  
+  <!--javascript-->
+  <script src="js/jquery.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/script.js"></script>
+</head>
+<body>
+<!-- HEADER -->    
+<header>
+   <div class="container-max">
+      <div class="row flex-column">
+        <nav class="top d-flex justify-content-between">
+            <ul class="nav">
+                <li><a href="#">login</a></li>
+                <li><a href="#">join us</a>
+                   <div class="msgbox">
+                       +10,000 P
+                   </div>
+                </li>
+                <li><a href="#">cart <span>0</span></a></li>
+                <li><a href="#">order</a></li>
+                <li class="mem"><a href="#">my page</a>
+                    <ul class="subnav">
+                        <li><a href="#">관심상품</a></li>
+                        <li><a href="#">주문조회</a></li>
+                        <li><a href="#">적립금</a></li>
+                        <li><a href="#">예치금</a></li>
+                        <li><a href="#">마이쿠폰</a></li>
+                        <li><a href="#">내가쓴글</a></li>
+                    </ul>
+                </li>
+                <li class="mem"><a href="#">community</a>
+                    <ul class="subnav">
+                        <li><a href="#">notice</a></li>
+                        <li><a href="#">q&a</a></li>
+                        <li><a href="#">review</a></li>
+                        <li><a href="#">event</a></li>
+                        <li><a href="#">자주묻는질문</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+            <ul class="right-nav nav">
+                <li><a href="#" class="facebook"><i class="ri-facebook-fill"></i></a></li>
+                <li><a href="#" class="instagram"><i class="ri-instagram-line"></i></a></li>
+                <li><a href="#" class="kakao"><i class="ri-kakao-talk-fill"></i></a></li>
+                <li><a href="#" class="youtube"><i class="ri-youtube-fill"></i></a></li>
+                <li>
+                    <form name="searchform" class="searchform" id="searchform">
+                        <input type="search" name="search" class="search" placeholder="🤦‍♀️🤦‍♂️고퀄리티 쇼핑몰!👍👍">
+                        <button type="button" class="btn btn-link btn-search"><i class="ri-search-line"></i></button>
+                    </form>
+                </li>
+            </ul>
+        </nav>
+        <h1 class="brand">MY SHOPPING MALL</h1>
+        
+      </div>
+   </div><!--/container-max-->
+   <nav class="global border-top border-bottom">
+      <div class="container-max">
+         <div class="row justify-content-between">
+            <a href="#" class="category"><i class="fa-solid fa-bars"></i></a>
+            <ul class="nav pr-category justify-content-between">
+                <li><a href="#">new</a></li>
+                <li><a href="#">빅사이즈</a></li>
+                <li><a href="#">원피스</a></li>
+                <li><a href="#">아우터</a></li>
+                <li><a href="#">상의</a></li>
+                <li><a href="#">바지</a></li>
+                <li><a href="#">new</a></li>
+            </ul>
+            <ul class="nav global-nav justify-content-between">
+                <li><a href="#">BEST리뷰</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">QandA</a></li>
+                <li><a href="#">배송조회</a></li>
+            </ul>
+         </div>
+      </div>
+   </nav>
+</header>
+</body>
+</html>
