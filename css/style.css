@@ -24,7 +24,7 @@ a:hover{
     }
 }
 
-/*################ TOP NAVIGATION ##############*/
+/***************** TOP NAVIGATION **************/
 .top ul.nav{
     text-transform: uppercase;
     font-size:12px;
@@ -165,7 +165,7 @@ input.search{
     text-decoration:none;
 }
 
-/*################ brand ##############*/
+/***************** BRAND **************/
 .brand{
     font-size:40px;
     font-weight:600;
@@ -176,7 +176,7 @@ input.search{
     font-weight:400;
 }
 
-/*****************GLOBAL NAV**************/
+/***************** GLOBAL NAV **************/
 nav.global{
     box-shadow:0 10px 10px 0 rgba(0,0,0,0.05);
 }
@@ -187,10 +187,82 @@ nav.global{
     width:50px;
     height:50px;
     text-align:center;
+    position: relative;
 }
 .category:hover{
-    color:var(--white-color);
     background-color:var(--dark-color);
+}
+.category:hover>a{
+    color:var(--white-color);
+}
+.category-subnav{
+    position: absolute;
+    width: 1310px;
+    height: 600px;
+    z-index: 101;
+    background: #fff;
+    border:1px solid var(--gray-dark-color);
+    overflow-y: auto;
+    display: flex;
+    padding: 0;
+    justify-content: space-between;
+    align-items: flex-start;
+    display: none;
+}
+.category-subnav-view{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+}
+.category-subnav-view>li{
+    width: 20%;
+    min-height: 150px;
+    padding: 20px;
+}
+.category-subnav-view ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    padding-top: 10px;
+}
+.category-subnav-view ul a{
+    display: block;
+}
+.category-subnav-view ul a:hover{
+    background: #eee;
+}
+.category-subnav-view>li>a{
+    display: block;
+    line-height: 35px;
+    background-color: #eee;
+    font-weight: 700;
+}
+.global-nav-view{
+    list-style-type: none;
+    font-size: 16px;
+    text-align: left;
+    line-height: 40px;
+    width: 140px;
+    height: 598px;
+    background-color: rgba(0,0,0,0.05);
+    margin:0;
+    padding: 0;
+    padding-top: 30px;
+}
+.global-nav-view li{
+    padding-left: 30px;
+    transition: all 300ms;
+}
+.global-nav-view li:hover{
+    background: var(--gray-color);
+}
+.global-nav-view li:hover a{
+    color: #000;
 }
 ul.pr-category{
    width: 55%;
@@ -222,4 +294,108 @@ ul.global-nav{
     width: 23%;
     text-transform: uppercase;
     line-height:50px;
+}
+
+/***************** HERO **************/
+.hero{
+    overflow: hidden;
+}
+.mySlick img{
+    margin-left: auto;
+    margin-right: auto;
+}
+.slick-dots{
+    bottom: 10px;
+}
+.slick-dots li.slick-active{
+    width: 40px;
+}
+.slick-dots li.slick-active button{
+    width: 40px;
+}
+.slick-dots li button::before{
+    content: "";
+    width: 20px;
+    height: 4px;
+    background: var(--gray-color);
+    opacity: 0.9;
+    transition: all 300ms;
+}
+.slick-dots li.slick-active button::before{
+    width: 40px;
+    background: var(--dark-color);
+    opacity: 0.5;
+}
+.slick-next{
+    right: calc(50% - 575px);
+}
+.slick-prev{
+    left: calc(50% - 600px);
+    z-index: 1000;
+}
+.mySlick:hover .slick-next::before,
+.mySlick:hover .slick-prev::before{
+    opacity: 0.5;
+}
+.slick-next::before,
+.slick-prev::before{
+    font-size: 50px;
+    opacity: 0;
+    transition: all 300ms;
+}
+
+/***************** NEW **************/
+.card{
+    border: none;
+}
+.card-img{
+    display: block;
+    width: 100%;
+    position: relative;
+}
+.card-img::after{
+    content: "";
+    display: block;
+    padding-bottom: 120%;
+}
+.card-img-top{
+    position:absolute;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+.card-body{
+    padding: 0;
+}
+.card-body h5{
+    font-size: 16px;
+    font-weight: 700;
+}
+.card-body p{
+    font-size: 14px;
+    color: var(--gray-dark-color);
+}
+
+/***************** LIST **************/
+.list-3,.list-4,.list-5{
+    margin:0 20px;
+}
+.list-color{
+    fill:var(--gray-color);
+}
+.list-act-color{
+    fill: var(--gray-dark-color);
+}
+
+/***************** SERVICE **************/
+.service{
+    padding: 40px 0;
+    background: var(--dark-color);
+    color: var(--white-color);
+}
+
+/***************** FOOTER **************/
+footer{
+    padding: 15px 0;
+    font-family: 'Roboto Slab', serif;
 }

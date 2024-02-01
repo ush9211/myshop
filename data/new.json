@@ -1,0 +1,16 @@
+{
+    "newlist" : [
+        {"num":1, "title":"black label", "txt":"프리미엄 라인, 블랙라벨", "img":"./images/pd/001.jpg"},
+        {"num":2, "title":"new hotdeal", "txt":"허리는 밴드거부감 없이!!", "img":"./images/pd/002.jpg"},
+        {"num":3, "title":"office look", "txt":"네크라인과 아랫단은 패턴을 담아 최강 아이템으로", "img":"./images/pd/003.jpg"},
+        {"num":4, "title":"outer", "txt":"울90% 폴리10% 혼방소재로 내구성이 좋은 고퀄리티", "img":"./images/pd/004.jpg"},
+        {"num":5, "title":"pants", "txt":"탈.부착 가능한 리얼폭스100% 후드퍼", "img":"./images/pd/005.jpg"},
+        {"num":6, "title":"slacks", "txt":"클래식하고 우아한 느낌이 물씬느껴지는 NO.59 레이빈숄핸드코트", "img":"./images/pd/006.jpg"},
+        {"num":7, "title":"dress", "txt":"프리미엄 라인, 블랙라벨", "img":"./images/pd/007.jpg"},
+        {"num":8, "title":"accessories", "txt":"골드버튼&스티치자수로 고급스러운 NO.87 베론골드핸드자켓", "img":"./images/pd/008.jpg"},
+        {"num":9, "title":"black label", "txt":"울50% 함유량 고퀄리티 원단으로 제작", "img":"./images/pd/009.jpg"},
+        {"num":10, "title":"hot deal", "txt":"모던한감각으로 가볍게 즐기기 좋은 NO.55진짜기본핸드코트", "img":"./images/pd/010.jpg"},
+        {"num":11, "title":"event sale", "txt":"스타일리쉬한 무드의 데님 미니 원피스", "img":"./images/pd/011.jpg"},
+        {"num":12, "title":"office look", "txt":"러블리함이 느껴지는 청 숏자켓+스커트", "img":"./images/pd/012.jpg"}
+    ]
+}
