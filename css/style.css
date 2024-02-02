@@ -427,3 +427,13 @@ footer{
     padding: 15px 0;
     font-family: 'Roboto Slab', serif;
 }
+
+
+@media (min-width:768px){
+    .col-md-55{
+        -ms-flex: 0 0 20%;
+        flex: 0 0 20%;
+        max-width: 20%;
+        padding:0 1rem;
+    }
+}
