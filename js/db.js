@@ -1,4 +1,6 @@
 $(function(){
+
+    /********** NAV **********/
     $.ajax({
         url: './data/db.json',
         success: function(rs){
@@ -25,6 +27,7 @@ $(function(){
         }
     });
 
+    /********** HERO **********/
     $.get("data/slide.json", function(rs){
         const img = rs.carousel;
         let imgs = '';
@@ -42,24 +45,56 @@ $(function(){
           });
     });
 
+    /********** NEW **********/
     $.get("data/new.json", function(rs){
         let newbox = '';
         const list = rs.newlist;
         for(let i=0; i<list.length; i++){
-            newbox = `
-            <div class="col-md-3">
+            newbox += `
+            <div class="col-md-3 mb-5">
                 <div class="card">
-                    <a href="#" class="card-img">
-                        <img src="images/pd/017.jpg" class="card-img-top" alt="nothing">
+                    <a href="detail.jsp?num=${list[i].num}" class="card-img">
+                        <img src="${list[i].img}" class="card-img-top" alt="nothing">
                     </a>
-                    <a href="#"><div class="card-body"></a>
-                        <h5 class="mt-4">OFFICE LOOK</h5>
-                        <p>센스있는 직장인 데일리룩</p>
-                    </div>
+                    <a href="#" class="card-body">
+                        <h5 class="mt-4">
+                            ${list[i].title}
+                            <span class="badge badge-danger">NEW</span>
+                        </h5>
+                        <p>${list[i].desc}</p>
+                    </a>
                 </div>
             </div>
             `;
         }
+        $('#newpd').html(newbox);
+    });
+
+    /********** LIST **********/
+    $.get("data/list.json", function(list){
+        let lists = '';
+        list.forEach(function(item){
+            lists += `
+                <div class="col-md-3">
+                    <div class="card">
+                        <a href="detail.jsp?num=${item.num}" class="card-img">
+                            <img src="${item.img}" class="card-img-top" alt="${item.img}">
+                        </a>
+                        <a href="#" class="card-body">
+                            <h5 class="mt-4 pd-2 border-bottom">
+                                ${item.title}
+                            </h5>
+                            <p class="desc">${item.desc}</p>
+                            <p class="price">
+                                <span class="or">${item.orprice}원</span>
+                                <span>${item.price}원</span>
+                            </p>
+                        </a>
+                    </div>
+                </div>
+            `;
+        });
+        $('#pdlist').html(lists);
     });
 
     

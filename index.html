@@ -146,20 +146,8 @@
         <h1 class="section-title mt-5 pt-5 text-center">새로 들어온 상품</h1>
         <p class="text-center mb-5">주목~ 금주에 새로 들어온 핫 템들 입니다.</p>
         <div class="container">
-            <div class="row">
-                <!-- LOOP -->
-                <div class="col-md-3">
-                    <div class="card">
-                        <a href="#" class="card-img">
-                            <img src="images/pd/017.jpg" class="card-img-top" alt="nothing">
-                        </a>
-                        <a href="#"><div class="card-body"></a>
-                            <h5 class="mt-4">OFFICE LOOK</h5>
-                            <p>센스있는 직장인 데일리룩</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- /LOOP -->
+            <div class="row" id="newpd">
+                <!-- LOOP --><!-- /LOOP -->
             </div>
         </div>
     </section>
@@ -169,8 +157,22 @@
         <h1 class="section-title mt-5 pt-5 text-center">베스트 핫템</h1>
         <p class="text-center mb-5">가장 많이 팔린 베스트 상품들을 보세요.</p>
         <div class="container">
-            <div class="row justify-content-center">
-                <a href="#" class="list-3">
+            <ul class="nav border p-2 my-5 sort">
+                <li class="border-right">
+                    <a href="#" class="font-weight-bold py-2 px-5">전체</a>
+                </li>
+                <li class="border-right">
+                    <a href="#" class="py-2 px-5">신상품순</a>
+                </li>
+                <li class="border-right">
+                    <a href="#" class="py-2 px-5">인기상품순</a>
+                </li>
+                <li class="border-right">
+                    <a href="#" class="py-2 px-5">베스트판매량순</a>
+                </li>
+            </ul>
+            <div class="row justify-content-center pt-3 pb-5 mb-5">
+                <a href="#" class="listview" data-view="3">
                     <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect width="12.1007" height="12.1007" class="list-color"/>
                         <rect y="13.8521" width="12.1007" height="12.1007" class="list-color"/>
@@ -183,7 +185,7 @@
                         <rect x="27.8993" y="27.8993" width="12.1007" height="12.1007" class="list-color"/>
                     </svg>
                 </a>
-                <a href="#" class="list-4">
+                <a href="#" class="listview" data-view="4">
                     <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect width="8.9808" height="8.9808" class="list-act-color"/>
                         <rect y="10.2807" width="8.9808" height="8.9808" class="list-act-color"/>
@@ -203,7 +205,7 @@
                         <rect x="31.0192" y="31.0192" width="8.9808" height="8.9808" class="list-act-color"/>
                     </svg>
                 </a>
-                <a href="#" class="list-5">
+                <a href="#" class="listview" data-view="5">
                     <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect width="7.12812" height="7.12812" class="list-color"/>
                         <rect y="8.15982" width="7.12812" height="7.12812" class="list-color"/>
@@ -233,8 +235,27 @@
                     </svg>
                 </a>
             </div>
-            <div class="row">
-                상품목록
+            <div class="row" id="pdlist">
+                <!-- LOOP -->
+                <div class="col-md-3">
+                    <div class="card">
+                        <a href="#" class="card-img">
+                            <img src="images/pd/050.jpg" class="card-img-top" alt="nothing">
+                        </a>
+                        <a href="#" class="card-body">
+                            <h5 class="mt-4 pd-2 border-bottom">
+                                OFFICE LOOK
+                                <span class="badge badge-danger">NEW</span>
+                            </h5>
+                            <p class="desc">센스있는 직장인 데일리룩</p>
+                            <p class="price">
+                                <span class="or">100,000원</span>
+                                <span>80,000원</span>
+                            </p>
+                        </a>
+                    </div>
+                </div>
+                <!-- /LOOP -->
             </div>
         </div>
     </section>
