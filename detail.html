@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>myShop</title>
+
+  <!--Mobile-->
+  <link rel="apple-touch-icon" sizes="57x57" href="images/favicon/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="images/favicon/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="images/favicon/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="images/favicon/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="images/favicon/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="images/favicon/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="images/favicon/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="images/favicon/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="images/favicon/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="images/favicon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+
+  <link rel="icon" type="image/x-icon" href="images/favicon/favicon.ico">
+  <meta name="description" content="java를 이용한 쇼핑몰 연습">
+  <meta name="keywords" content="html, css, javascript, bootstrap, java">
+  <meta name="author" content="wein Lee">
+
+  <!--stylesheet -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;200;300;400;500;600;700;800;900&family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.1.0/remixicon.min.css" integrity="sha512-i5VzKip7owqOGjb0YTF8MR2J9yBVO3FLHeazKzLp354XYTmKcqEU3UeFYUw82R8tV6JqxeATOfstCfpfPhbyEA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="css/animate.min.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/slick.css">
+  <link rel="stylesheet" href="css/slick-theme.css">
+  <link rel="stylesheet" href="css/root.css">
+  <link rel="stylesheet" href="css/style.css">
+  
+  <!--javascript-->
+  <script src="js/jquery.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/slick.min.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/db.js"></script>
+  <script src="js/detail.js"></script>
+</head>
+<body>
+
+    <!-- HEADER -->    
+    <header>
+        <div class="container-max">
+            <div class="row">
+                <nav class="top d-flex justify-content-between">
+                    <ul class="nav">
+                        <li><a href="#">login</a></li>
+                        <li><a href="#">join us</a>
+                        <div class="msgbox">
+                            +10,000 P
+                        </div>
+                        </li>
+                        <li><a href="#">cart <span>0</span></a></li>
+                        <li><a href="#">order</a></li>
+                        <li class="mem"><a href="#">my page</a>
+                            <ul class="subnav">
+                                <li><a href="#">관심상품</a></li>
+                                <li><a href="#">주문조회</a></li>
+                                <li><a href="#">적립금</a></li>
+                                <li><a href="#">예치금</a></li>
+                                <li><a href="#">마이쿠폰</a></li>
+                                <li><a href="#">내가쓴글</a></li>
+                            </ul>
+                        </li>
+                        <li class="mem"><a href="#">community</a>
+                            <ul class="subnav">
+                                <li><a href="#">notice</a></li>
+                                <li><a href="#">q&a</a></li>
+                                <li><a href="#">review</a></li>
+                                <li><a href="#">event</a></li>
+                                <li><a href="#">자주묻는질문</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <ul class="right-nav nav">
+                        <li><a href="#" class="facebook"><i class="ri-facebook-fill"></i></a></li>
+                        <li><a href="#" class="instagram"><i class="ri-instagram-line"></i></a></li>
+                        <li><a href="#" class="kakao"><i class="ri-kakao-talk-fill"></i></a></li>
+                        <li><a href="#" class="youtube"><i class="ri-youtube-fill"></i></a></li>
+                        <li>
+                            <form name="searchform" class="searchform" id="searchform">
+                                <input type="search" name="search" class="search" placeholder="💖🌹고퀄리티 쇼핑몰!👍👍">
+                                <button type="button" class="btn btn-link btn-search"><i class="ri-search-line"></i></button>
+                            </form>
+                        </li>
+                    </ul>
+                </nav>
+                <h1 class="brand">MY SHOPPING MALL</h1>
+                
+            </div>
+        </div>
+        <nav class="global border-top border-bottom">
+            <div class="container-max">
+                <div class="row justify-content-between">
+                    <div class="category">
+                        <a href="#"><i class="fa-solid fa-bars"></i></a>
+                        <div class="category-subnav">
+                            <ul class="category-subnav-view">
+
+                            </ul>
+                            <ul class="global-nav-view">
+                                <li><a href="#">BEST리뷰</a></li>
+                                <li><a href="#">FAQ</a></li>
+                                <li><a href="#">Q&A</a></li>
+                                <li><a href="#">배송조회</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <ul class="nav pr-category justify-content-between">
+                        <li><a href="#">new</a></li>
+                        <li><a href="#">빅사이즈</a></li>
+                        <li><a href="#">원피스</a></li>
+                        <li><a href="#">아우터</a></li>
+                        <li><a href="#">상의</a></li>
+                        <li><a href="#">바지</a></li>
+                        <li><a href="#">new</a></li>
+                    </ul>
+                    <ul class="nav global-nav justify-content-between">
+                        <li><a href="#">BEST리뷰</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">QandA</a></li>
+                        <li><a href="#">배송조회</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- DETAIL -->
+    <section id="detail" class="detail">
+        <div class="container">
+            <div class="d-flex justify-content-end align-items-center pt-5">
+                <ul class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item"><a href="#">봄 신상</a></li>
+                    <li class="breadcrumb-item font-weight-bold">블라우스/셔츠</li>
+                </ul>
+            </div>
+            <div class="row">
+                <div class="col-md-12 text-right mb-5 pb-1 border-bottom">
+                    <span class="badge badge-danger">new</span>
+                </div>
+                <div class="col-md-6 pr-md-5">
+                    <div class="img-box">
+                        <img src="images/pd/121.jpg" alt="110">
+                    </div>
+                    <div class="img-thumb-box">
+                        <img src="images/pd/121.jpg" alt="001">
+                        <img src="images/pd/122.jpg" alt="002">
+                        <img src="images/pd/123.jpg" alt="003">
+                        <img src="images/pd/124.jpg" alt="004">
+                        <img src="images/pd/125.jpg" alt="005">
+                        <img src="images/pd/126.jpg" alt="006">
+                    </div>
+                </div>
+                <div class="col-md-6 pl-md-5 pr-list">
+                    <h1>링클프리 스트라이프 셔츠
+                        <span class="badge badge-primary">HOT</span>
+                        <span class="badge badge-danger">new</span>
+                    </h1>
+                    <p>구김적은 링클프리 5색상 [size S,M,L,XL]</p>
+                    <ul class="ul-pr-list">
+                        <li><label class="title-label">상품코드</label> P00103EEA</li>
+                        <li><label class="title-label">판매가</label> 30,900원</li>
+                        <li><label class="title-label">할인판매가</label> 24,700원</li>
+                        <li><label class="title-label">적립금</label> 247원</li>
+                        <li><label class="title-label">배송비</label> 3,000원 [<span>50,000원</span> 이상 구매시, <span>배송비 무료</span>]</li>
+                        <li class="line colors"><label>컬러 </label>
+                            <input type="radio" name="colors" id="black" value="검정">
+                            <label for="black" class="black"></label>
+                            <input type="radio" name="size" id="pink" value="핑크">
+                            <label for="pink" class="pink"></label>
+                            <input type="radio" name="size" id="navy" value="네이비">
+                            <label for="navy" class="navy"></label>
+                            <input type="radio" name="size" id="blue" value="파랑">
+                            <label for="blue" class="blue"></label>
+                            <input type="radio" name="size" id="beige" value="베이지">
+                            <label for="beige" class="beige"></label>
+                            <p class="selected">검정색</p>
+                        </li>
+                        <li class="line"><label class="title-label">사이즈 </label>
+                            <select class="size" name="size">
+                                <option value="xsmall">XS</option>
+                                <option value="small">S</option>
+                                <option value="medium" selected>M</option>
+                                <option value="large">L</option>
+                                <option value="xlarge">XL</option>
+                            </select>
+                        </li>
+                        <li class="line"><label>추가구성 </label>
+                            <select>
+                                <option>선택 안함</option>
+                                <option>니트 세트(+18,000원)</option>
+                            </select>
+                        </li>
+                    </ul>
+                    <div class="t-price">
+                        <ul class="add-opt">
+                            <li class="total-text"></li>
+                            <li class="addbox"></li>
+                            <li class="tomoney"></li>
+                        </ul>
+                        <div class="totalmoney">
+                            총 상품금액(수량)  :  배송비 포함 <strong>27,700원</strong>(1개)
+                        </div>
+                        <div class="btnbox">
+                            <button type="button" class="btn btn-detail">주문하기</button>
+                            <button type="button" class="btn btn-line">ADD TO CART</button>
+                            <button type="button" class="btn btn-line">WISH LIST</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <img src="images/pd/121-01.jpg" alt="121-01">
+                <img src="images/pd/121-0.gif" alt="121-0">
+                <img src="images/pd/121-1.jpg" alt="121-1">
+                <img src="images/pd/121-2.jpg" alt="121-2">
+                <img src="images/pd/121-3" alt="121-3">
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICE -->
+    <section id="service" class="service">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h4>CUSTOMER CENTER <span class="tel">02-999-9993</span></h4>
+                    <p>평일 오전 10:00 ~ 오후 5:00 / 점심시간 오후 12:00 ~ 오후 1:00 / 토, 일, 공휴일 휴무</p>
+                    <h4>KAKAOTALK <a href="#" class="kakao"><i class="ri-kakao-talk-fill"></i></a></h4>
+                    <p>평일 오전 11:00 ~ 오후 4:00 / 점심시간 오후 12:00 ~ 오후 1:00 / 토, 일, 공휴일 휴무</p>
+                    <h4>ACCOUNT INFO</h4>
+                    <div class="bank-box">
+                        <span class="bank">우리 1234-101-335115</span>
+                        <span class="bank">농협 1234-01-057383</span>
+                        <span class="bank">국민 123456-04-138751</span>
+                        <span class="bank">신한 123-024-368599</span>
+                        <span class="bank">기업 123-053616-01-012</span>
+                        <span class="bank">주식회사 이젠네트워크</span>
+                    </div>
+                    <h4>RETURN / EXCHANGE</h4>
+                    <p>CJ대한통운 : 서울시 행복구 사랑로14, 1층 CJ대한통운 '마이샵'</p>
+                    <p>한진택배 : 서울시 행복구 사랑로 37-29, 1004호 한진택배 '마이샵'</p>
+                </div>
+                <div class="col-md-6">
+                    <div class="linebox">
+                        <h4>COMPANY</h4>
+                        <p>주식회사 엠제이앤엠 대표 문인기</p>
+                        <h4>ADDRESS</h4>
+                        <p>04797 서울특별시 성동구 아차산로11길 18 (성수동2가) 쁘렝땅빌딩 5층 BUSINESS LICENSE 201-86-05562</p>
+                        <p>[사업자정보확인] MAIL-ORDER-LICENSE 2021-서울성동-02012 EMAIL dabagirl@naver.com</p>
+                        <div class="df-escrow-inicis"
+                            onclick="window.open('https://www.inicis.com/','escrow','width=500,height=640,scrollbars=auto')">
+                            <p>KG 에스크로<br>가입사실 확인</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <p class="text-center pt-3">Copyright &copy; ush's all right reserved. maked 2024.</p>
+        </div>
+    </footer>
+
+    <!-- REMOTECONTROL -->
+    <div class="remotecontrol">
+        <a href="#" class="tops"><i class="ri-arrow-up-s-line"></i></a>
+        <a href="#" class="news">N</a>
+        <a href="#" class="hots">H</a>
+        <a href="#" class="bottoms"><i class="ri-arrow-down-s-line"></i></a>
+    </div>
+</body>
+</html>
