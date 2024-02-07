@@ -33,10 +33,12 @@ $(function(){
 
 
     /***************** SUBNAV **************/
-    $('.category').mouseenter(function(){
-        $(this).find('.category-subnav').css('display','flex');
-    }).mouseleave(function(){
-        $(this).find('.category-subnav').css('display','none');
+    $('.category').click(function(){
+        if($(this).find('.category-subnav').css('display')=='none'){
+            $(this).find('.category-subnav').css('display','flex');
+        }else{
+            $(this).find('.category-subnav').css('display','none');
+        }
     });
 
 
