@@ -4,20 +4,24 @@ $(function(){
     $(window).scroll(function(){
         let tops = $(window).scrollTop();  
         if(tops > 0) {
-           $('header').css({
-              'position': 'fixed',
-              'backgroundColor': 'rgba(255,255,255,0.8)',
-              'top': 0,
-              'width': '100%',
-              'zIndex':1000
-           }).addClass("fixed");
+            $('header').css({
+                'position': 'fixed',
+                'backgroundColor': 'rgba(255,255,255,0.8)',
+                'top': 0,
+                'width': '100%',
+                'zIndex':1000
+            }).addClass("fixed");
+            $('.category-subnav').css('display', 'none');
+            $('.detail').css('margin-top', '200px');
         }else{
-          $('header').css({
-             'position': 'static',
-             'backgroundColor': 'rgba(255,255,255)',
-             'top': 0,
-             'width': '100%'
-          }).removeClass('fixed');        
+            $('header').css({
+                'position': 'static',
+                'backgroundColor': 'rgba(255,255,255)',
+                'top': 0,
+                'width': '100%'
+            }).removeClass('fixed');  
+            $('.category-subnav').css('background-color', 'rgba(255,255,255,1)');
+            $('.detail').css('margin-top', '200px');      
         } 
      });
 
@@ -36,8 +40,10 @@ $(function(){
     $('.category').click(function(){
         if($(this).find('.category-subnav').css('display')=='none'){
             $(this).find('.category-subnav').css('display','flex');
+            $(this).addClass('category-act');
         }else{
             $(this).find('.category-subnav').css('display','none');
+            $(this).removeClass('category-act');
         }
     });
 
