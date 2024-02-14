@@ -169,7 +169,7 @@
                     <form name="detail-form" method="post">
                         <input type="hidden" name="title" id="title" value="링클프리 스트라이프 셔츠">
                         <input type="hidden" name="prcode" id="prcode" value="P00103EEA">
-                        <input type="hidden" name="prprice" id="prprice" value="30900">
+                        <input type="hidden" name="prprice" id="prprice" value="24700">
                         <input type="hidden" name="reserves" id="reserves" value="247">
                         <input type="hidden" name="delivery" id="delivery" value="3000">
                         <input type="hidden" name="totalprice" id="totalprice">
@@ -186,7 +186,7 @@
                             <li><label class="title-label">적립금</label> 247원</li>
                             <li><label class="title-label">배송비</label> 3,000원 [<span>50,000원</span> 이상 구매시, <span>배송비 무료</span>]</li>
                             <li class="line colors"><label class="title-label">컬러 </label>
-                                <input type="radio" name="color" checked id="black" data-color="0" data-colorname="검정" value="검정">
+                                <input type="radio" name="color" id="black" data-color="0" data-colorname="검정" value="검정">
                                 <label for="black" class="black"></label>
                                 <input type="radio" name="color" id="pink" data-color="1000" data-colorname="핑크" value="핑크">
                                 <label for="pink" class="pink"></label>
@@ -196,13 +196,14 @@
                                 <label for="blue" class="blue"></label>
                                 <input type="radio" name="color" id="beige" data-color="0" data-colorname="베이지" value="베이지">
                                 <label for="beige" class="beige"></label>
-                                <p class="selected">검정색</p>
+                                <p class="selected">--- [필수] color 선택 ---</p>
                             </li>
                             <li class="line"><label class="title-label">사이즈 </label>
-                                <select class="size" name="size">
+                                <select class="size" name="size" disabled>
+                                    <option>--- [필수] size 선택 ---</option>
                                     <option value="xsmall" data-size="5000">XS</option>
                                     <option value="small" data-size="0">S</option>
-                                    <option value="medium" data-size="0" selected>M</option>
+                                    <option value="medium" data-size="0">M</option>
                                     <option value="large" data-size="0">L</option>
                                     <option value="xlarge" data-size="5000">XL</option>
                                 </select>
@@ -220,11 +221,11 @@
                         <div class="t-price">
                             <div class="addquantity"></div>
                             <div class="totalmoney">
-                                총 상품금액(수량)  :  <strong>27,700원</strong>(1개)
+                                <!--총 상품금액(수량)  :  <strong>27,700원</strong>(1개)-->
                             </div>
                             <div class="btnbox">
-                                <button type="button" class="btn btn-detail"><i class="ri-hand-heart-fill"></i> 주문하기</button>
-                                <button type="button" class="btn btn-line btn-left"><i class="ri-shopping-bag-3-line"></i> ADD TO CART</button>
+                                <button type="button" class="btn btn-detail" disabled><i class="ri-hand-heart-fill"></i> 주문하기</button>
+                                <button type="button" class="btn btn-line btn-left" disabled><i class="ri-shopping-bag-3-line"></i> ADD TO CART</button>
                                 <button type="button" class="btn btn-line btn-right"><i class="ri-heart-fill"></i> WISH LIST</button>
                             </div>
                         </div>

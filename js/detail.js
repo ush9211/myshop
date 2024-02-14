@@ -18,7 +18,8 @@ $(function(){
     // Number(), parseInt() : 숫자타입으로 바꿔주는 것 (둘 다 사용가능)
 
     let totalmoney = prprice;
-    let opt1, color, colortxt, opt2, size, sizetxt, optionText;
+    let tmoney = prprice;
+    let opt1, opt11, color, colortxt, opt2, opt22, size, sizetxt, optionText, totalTextLength;
 
     // 추가금액 계산
     $('input[name="color"]').change(function(){
@@ -31,42 +32,48 @@ $(function(){
         //console.log(opt1,color,colortxt);
 
         if(opt1>0){
-            opt1 = "(+" + opt1.toLocaleString() + "원)";
+            opt11 = "(+" + opt1.toLocaleString() + "원)";
         }else{
-            opt1 = "";
+            opt11 = "";
         }
 
-        colortxt += " " + opt1;
+        // 화면에 출력할 색상이름
+        colortxt += " " + opt11;
         
+        // size박스 활성화
+        $('.size').attr('disabled', false);
     });
 
     let opthtml = `
-                            <ul class="add-opt">
-                                <li class="total-text">
-
-                                </li>
+                    <ul class="add-opt">
+                        <li class="d-flex align-items-center">
+                            <div class="total-text"></div>
+                            <ul class="add-opts">
                                 <li class="addbox d-flex align-items-center">
                                     <label class="title-label">수량</label>
-                                    <div class="input-group mb-3 ㅢ-4">
+                                    <div class="input-group">
                                         <div class="input-group-prepend">
-                                            <button class="btn btn-outline-line" id="qdown" type="button">
+                                            <button class="btn btn-outline-line qdown" type="button">
                                                 <i class="fa-solid fa-chevron-down"></i>
                                             </button>
                                         </div>
-                                        <input type="number" class="quantity" id="quantity" name="quantity" value="1" readonly>
+                                        <input type="number" class="quantity" name="quantity" value="1" readonly>
                                         <div class="input-group-append">
-                                            <button class="btn btn-outline-line" id="qup" type="button">
+                                            <button class="btn btn-outline-line qup" type="button">
                                                 <i class="fa-solid fa-chevron-up"></i>
                                             </button>
                                         </div>
                                     </div>
                                 </li>
-                                <li class="tomoney">
-
-                                </li>
-                            </ul>`;
+                            </ul>
+                            <div class="tomoney"></div>
+                        </li>
+                    </ul>`;
 
     $('.size').change(function(){
+        totalTextLength = $('.total-text').length;
+        const oradd = $('.addquantity').html();
+
         // 추가금액
         opt2 = Number($(this).find("option:selected").data('size'));
         // 사이즈 값
@@ -76,31 +83,36 @@ $(function(){
         //console.log(opt2,size,sizetxt);
 
         if(opt2>0){
-            opt2 = "(+" + opt2.toLocaleString() + "원)";
+            opt22 = "(+" + opt2.toLocaleString() + "원)";
         }else{
-            opt2 = "";
+            opt22 = "";
         }
 
-        sizetxt += " " + opt2;
+        tmoney = prprice + (opt1 + opt2);
 
-        optionText = `<p>${prtitle}, ${colortxt} - ${sizetxt}</p>`;
+        sizetxt += " " + opt22;
 
-        const oradd = $('.addquantity').html();
+        optionText = `<p>${colortxt} - ${sizetxt}</p>`;
+
         $('.addquantity').html(oradd + opthtml);
-        $('.total-text').html(optionText);
+
+        // .eq() : 순서정하기
+        $('.total-text').eq(totalTextLength).html(optionText);
+
+        $('.tomoney').eq(totalTextLength).html(tmoney.toLocaleString() + "원");
     });
 
 
     // html에서는 리스트를 삭제하고, js에서 추가했기에, 문서를 다시 읽어와야함
     // 수량 늘리기
-    $(document).on('click', "#qup", function(){
-        let quantity = Number($('#quantity').val());
+    $(document).on('click', ".qup", function(){
+        let quantity = Number($(this).parent().prev().val());
         quantity += 1;
         if(quantity > 9){
             alert("최대 수량입니다.");
             quantity = 9;
         }
-        $('#quantity').val(quantity);
+        $(this).parent().prev().val(quantity);
         totalmoney = prprice * quantity;
 
         let tmoney = totalmoney.toLocaleString();
@@ -110,14 +122,14 @@ $(function(){
     });
 
     // 수량 줄이기
-    $(document).on('click', "#qdown", function(){
-        let quantity = Number($('#quantity').val());
+    $(document).on('click', ".qdown", function(){
+        let quantity = Number($(this).parent().next().val());
         quantity -= 1;
         if(quantity < 1){
             alert("최소 수량입니다.");
             quantity = 1;
         }
-        $('#quantity').val(quantity);
+        $(this).parent().next().val(quantity);
         totalmoney = prprice * quantity;
 
         let tmoney = totalmoney.toLocaleString();
@@ -128,4 +140,7 @@ $(function(){
     
 });
 
+function orders(){
+
+}
 

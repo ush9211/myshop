@@ -840,3 +840,14 @@ input[type=number].quantity{
 .btn-line.btn-right{
     margin-left: 5px;
 }
+.total-text p{
+    margin: 0;
+    padding: 5px 8px;
+    background: #6c757d;
+    color: #fff;
+    border-radius: 5px;
+}
+.addbox .title-label{
+    width: 60px;
+    margin: 0;
+}
