@@ -851,3 +851,6 @@ input[type=number].quantity{
     width: 60px;
     margin: 0;
 }
+.remove-order{
+    cursor: pointer;
+}
