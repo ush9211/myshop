@@ -184,7 +184,7 @@
                             <li><label class="title-label">판매가</label> 30,900원</li>
                             <li><label class="title-label">할인판매가</label> 24,700원</li>
                             <li><label class="title-label">적립금</label> 247원</li>
-                            <li><label class="title-label">배송비</label> 3,000원 [<span>50,000원</span> 이상 구매시, <span>배송비 무료</span>]</li>
+                            <li><label class="title-label">배송비</label> 3,000원 [<span>100,000원</span> 이상 구매시, <span>배송비 무료</span>]</li>
                             <li class="line colors"><label class="title-label">컬러 </label>
                                 <input type="radio" name="color" id="black" data-color="0" data-colorname="검정" value="검정">
                                 <label for="black" class="black"></label>
@@ -220,13 +220,13 @@
                         </ul>
                         <div class="t-price">
                             <div class="addquantity"></div>
-                            <div class="totalmoney">
+                            <div class="totalmoney text-right border-top mt-2 pt-3">
                                 <!--총 상품금액(수량)  :  <strong>27,700원</strong>(1개)-->
                             </div>
                             <div class="btnbox">
-                                <button type="button" class="btn btn-detail" disabled><i class="ri-hand-heart-fill"></i> 주문하기</button>
-                                <button type="button" class="btn btn-line btn-left" disabled><i class="ri-shopping-bag-3-line"></i> ADD TO CART</button>
-                                <button type="button" class="btn btn-line btn-right"><i class="ri-heart-fill"></i> WISH LIST</button>
+                                <button type="submit" id="submit" class="btn btn-detail" disabled><i class="ri-hand-heart-fill"></i> 주문하기</button>
+                                <button type="button" id="cart" class="btn btn-line btn-left" disabled><i class="ri-shopping-bag-3-line"></i> ADD TO CART</button>
+                                <button type="button" id="wish" class="btn btn-line btn-right"><i class="ri-heart-fill"></i> WISH LIST</button>
                             </div>
                         </div>
                     </form>
@@ -234,7 +234,36 @@
                 <!-- /상품정보 LOOP -->
 
             </div>
-            <div class="row">
+            <!-- 자세히 보기 -->
+            <div class="container mt-4 pt-4 border-top">
+                <ul class="nav nav-pills">
+                    <li class="active"><a data-toggle="pill" href="#view">상품상세정보</a></li>
+                    <li><a data-toggle="pill" href="#guide">구매가이드</a></li>
+                    <li><a data-toggle="pill" href="#review">구매후기</a></li>
+                    <li><a data-toggle="pill" href="#qna">상품문의</a></li>
+                </ul>
+                
+                <div class="tab-content">
+                    <div id="view" class="tab-pane fade in active show">
+                        <h3>HOME</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                    <div id="guide" class="tab-pane fade">
+                        <h3>Menu 3</h3>
+                        <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+                    </div>
+                    <div id="review" class="tab-pane fade">
+                        <h3>Menu 1</h3>
+                        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    </div>
+                    <div id="qna" class="tab-pane fade">
+                        <h3>Menu 2</h3>
+                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row justify-content-center">
                 <img src="images/pd/121-01.jpg" alt="121-01">
                 <img src="images/pd/121-0.gif" alt="121-0">
                 <img src="images/pd/121-1.jpg" alt="121-1">
@@ -292,8 +321,6 @@
     <!-- REMOTECONTROL -->
     <div class="remotecontrol">
         <a href="#" class="tops"><i class="ri-arrow-up-s-line"></i></a>
-        <a href="#" class="news">N</a>
-        <a href="#" class="hots">H</a>
         <a href="#" class="bottoms"><i class="ri-arrow-down-s-line"></i></a>
     </div>
 </body>

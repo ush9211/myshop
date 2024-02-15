@@ -854,3 +854,31 @@ input[type=number].quantity{
 .remove-order{
     cursor: pointer;
 }
+
+/***************** DETAIL - 상품상세정보 **************/
+.nav-pills{
+    margin-bottom: 30px;
+    font-size: 16px;
+    color: var(--gray-dark-color);
+    justify-content: center;
+}
+.nav-pills li{
+    padding: 5px 30px;
+    position: relative;
+    transition: all 300ms;
+}
+.nav-pills li.active,
+.nav-pills li:hover{
+    background: #eee;
+    border-radius: 5px;
+}
+.nav-pills li:not(:last-child)::after{
+    content: "";
+    display: block;
+    width: 1px;
+    height: 10px;
+    background: #ddd;
+    position: absolute;
+    right: 0;
+    top: 13px;
+}
