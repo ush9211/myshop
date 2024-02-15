@@ -1,3 +1,7 @@
 design/
 images/
 fonts/
+bootstrap.min/
+jquery.min/
+popper.min/
+slick.min/
