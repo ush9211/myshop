@@ -379,13 +379,14 @@ ul.global-nav{
 /***************** HERO **************/
 .hero{
     overflow: hidden;
+    position: relative;
 }
 .mySlick img{
     margin-left: auto;
     margin-right: auto;
     object-fit: cover;
     width: 100%;
-    height: 200px;
+    height: 500px;
 }
 .slick-dots{
     bottom: 10px;
@@ -409,22 +410,37 @@ ul.global-nav{
     background: var(--dark-color);
     opacity: 0.5;
 }
-.slick-next{
-    right: calc(50% - 575px);
+.hero-prev,
+.hero-next{
+    border: none;
+    outline: none;
+    background: transparent;
+    position: absolute;
+    font-size: 70px;
+    top: 200px;
+    color: rgba(255,255,255,0);
+    transition: all 400ms;
+    text-align: center;
 }
 .slick-prev{
+    left: 20px;
+    z-index: 100;
+}
+.slick-next{
+    right: 20px;
+    z-index: 100;
+}
+.hero-prev{
     left: calc(50% - 600px);
-    z-index: 1000;
+    z-index: 100;
 }
-.mySlick:hover .slick-next::before,
-.mySlick:hover .slick-prev::before{
-    opacity: 0.5;
+.hero-next{
+    right: calc(50% - 575px);
+    z-index: 100;
 }
-.slick-next::before,
-.slick-prev::before{
-    font-size: 50px;
-    opacity: 0;
-    transition: all 300ms;
+.hero:hover .hero-next,
+.hero:hover .hero-prev{
+    color: rgba(255,255,255,.7);
 }
 
 /***************** NEW **************/
@@ -881,4 +897,99 @@ input[type=number].quantity{
     position: absolute;
     right: 0;
     top: 13px;
+}
+.shop-contents h3{
+    margin-bottom: 1.5em;
+    padding-bottom: 0.5em;
+    border-bottom: 1px solid var(--gray-color);
+}
+.shop-contents p{
+    font-size: 1em;
+    font-weight: 400;
+}
+
+/***************** DETAIL - 구매후기 **************/
+.star{
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+.star i{
+    font-size: 30px;
+    margin: 5px;
+    color: #ffb500;
+}
+.shop-contents p.score{
+    font-size: 50px;
+    font-weight: 700;
+}
+.ratio-box{
+    display: flex;
+    margin-top: 60px;
+    margin-left: 60px;
+    margin-right: 60px;
+}
+.ratio-box>div{
+    width: 20%;
+}
+.box-line{
+    margin-left: auto;
+    margin-right: auto;
+    width: 10px;
+    height: 80px;
+    background: var(--gray-color);
+    border-radius: 5px;
+    position: relative;
+}
+.box-line::after{
+    position: absolute;
+    width: 30px;
+    font-size: 14px;
+    font-weight: 700;
+    top: -30px;
+    left: -9px;
+}
+.ratio-box>div:first-of-type .box-line::after{
+    content: "5점";
+}
+.ratio-box>div:nth-of-type(2) .box-line::after{
+    content: "4점";
+}
+.ratio-box>div:nth-of-type(3) .box-line::after{
+    content: "3점";
+}
+.ratio-box>div:nth-of-type(4) .box-line::after{
+    content: "2점";
+}
+.ratio-box>div:last-of-type .box-line::after{
+    content: "1점";
+}
+.box-line-color{
+    position: absolute;
+    width: 10px;
+    border-radius: 5px;
+    background: #ffb500;
+    bottom: 0;
+}
+.box-line-color span{
+    position: absolute;
+    bottom: -30px;
+    font-size: 16px;
+    font-weight: 500;
+    display: block;
+    width: 50px;
+    text-align: center;
+    left: -170%;
+}
+.review-photo{
+    height: 100%;
+    width: 100%;
+}
+.img{
+    width: 100px;
+    height: 100px;
+}
+.img img{
+    object-fit: cover;
+    width: 150px;
+    height: 150px;
 }

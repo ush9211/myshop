@@ -225,8 +225,32 @@ $(function(){
         $('.nav-pills>li').removeClass('active');
         $(this).addClass('active');
     })
-    
+    viewReview();
+
+    // 리뷰 슬릭
+    $('#review').show(function(){
+        $('.review-photo').slick({
+            slidesToShow : 8,
+            slidesToScroll : 1,
+            centerMode : true,
+            focusOnSelect : true
+        });
+    });
+
 });
+    
+    
+
+
+// 리뷰 별점비율 함수
+function viewReview(){
+
+    // .each(function(){}) : 루프돌리기 (for문과 비슷)
+    $('.box-line-color').each(function(){
+        let h = $(this).css('height');
+        $(this).html("<span>"+h+"</span>")
+    });
+}
 
 // 총액 계산 함수
 function totalMoney(delivery){
