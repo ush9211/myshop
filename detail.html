@@ -44,6 +44,7 @@
   <script src="js/script.js"></script>
   <script src="js/db.js"></script>
   <script src="js/detail.js"></script>
+  <script src="js/cart.js"></script>
 </head>
 <body>
 
@@ -59,7 +60,7 @@
                             +10,000 P
                         </div>
                         </li>
-                        <li><a href="#">cart <span>0</span></a></li>
+                        <li><a href="#">cart <span class="cart-count">0</span></a></li>
                         <li><a href="#">order</a></li>
                         <li class="mem"><a href="#">my page</a>
                             <ul class="subnav">
@@ -166,13 +167,17 @@
 
                 <!-- 상품정보 LOOP -->
                 <div class="col-md-6 pl-md-5 pr-list">
-                    <form name="detail-form" method="post">
+                    <form name="detail-form" method="post" id="detail-form">
                         <input type="hidden" name="title" id="title" value="링클프리 스트라이프 셔츠">
                         <input type="hidden" name="prcode" id="prcode" value="P00103EEA">
                         <input type="hidden" name="prprice" id="prprice" value="24700">
                         <input type="hidden" name="reserves" id="reserves" value="247">
                         <input type="hidden" name="delivery" id="delivery" value="3000">
                         <input type="hidden" name="totalprice" id="totalprice">
+
+
+                        <!-- 백엔드 작업에서는 삭제할 예정 -->
+                        <input type="hidden" name="imgid" id="imgid" value="109">
 
                         <h1>링클프리 스트라이프 셔츠
                             <span class="badge badge-primary">HOT</span>
@@ -245,14 +250,25 @@
                 </ul>
                 
                 <div class="tab-content py-5">
+
+                    <!-- 상세정보 -->
                     <div id="view" class="tab-pane fade in active show">
                         <h3>HOME</h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <div class="row justify-content-center">
+                            <img src="images/pd/121-01.jpg" alt="121-01">
+                            <img src="images/pd/121-0.gif" alt="121-0">
+                            <img src="images/pd/121-1.jpg" alt="121-1">
+                            <img src="images/pd/121-2.jpg" alt="121-2">
+                        </div>
                     </div>
+
+                    <!-- 구매가이드 -->
                     <div id="guide" class="tab-pane fade">
-                        <h3>Menu 3</h3>
-                        <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+                        
                     </div>
+
+                    <!-- 리뷰 -->
                     <div id="review" class="tab-pane fade">
                         <h3>구매후기</h3>
                         <div class="row pb-4 border-bottom">
@@ -339,19 +355,120 @@
                                 <a href="#"><img src="images/pd/112.jpg" alt="112"></a>
                             </div>
                         </div>
+                        <div class="container border-bottom mt-5 pb-3 d-flex">
+                            <a href="#" class="btn btn-outline-danger mr-3">최신순</a>
+                            <a href="#" class="btn btn-outline-warning">별점순</a>
+                        </div>
+                        <ul class="list-group list-group-flush review-list">
+                            <!-- loop -->
+                            <li class="list-group-item">
+                                <div class="row">
+                                    <div class="col-md-10 py-3 pb-4">
+                                        <div class="star starin">
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-half-line"></i>
+                                            <i class="ri-star-line"></i>
+                                        </div>
+                                        <p>바스트 페이크 포켓으로 입체적이면서도 밋밋함이 없으며
+                                            전체적으로 여유있는 핏감으로 편안하게 착용되어집니다!
+                                            스커트나 슬랙스, 데님팬츠 등
+                                            다양한 바텀 아이템과 두루 매치하기 좋아 추천드려요~</p>
+                                        <a href="#" class="imgs"><img src="images/pd/110.jpg" alt="110" class="img"></a>
+                                        <a href="#" class="imgs"><img src="images/pd/111.jpg" alt="111" class="img"></a>
+                                        <a href="#" class="imgs"><img src="images/pd/112.jpg" alt="112" class="img"></a>
+                                    </div>
+                                    <div class="col-md-2 py-3 text-center">
+                                        <span class="badge badge-light">2024.02.20</span>
+                                        <br> <br>
+                                        <a href="#"><span class="badge badge-secondary">홍길자</span></a>
+                                    </div>
+                                </div>
+                            </li>
+                            <!-- /loop -->
+                            <li class="list-group-item">Second item</li>
+                            <li class="list-group-item">Third item</li>
+                            <li class="list-group-item">Fourth item</li>
+                        </ul>
+                        <div class="rp">
+                            <i class="ri-close-line rp-close"></i>
+                            <div class="review-popup">
+                                <div class="d-flex">
+                                    <div class="imgbox">
+                                        <img src="images/pd/110.jpg" alt="110">
+                                    </div>
+                                    <div class="pdbox">
+                                        <ul class="pddetail">
+                                            <li class="pdtitle"><a href="#">링클프리 스트라이프 셔츠</a></li>
+                                            <li><label for="">상품코드</label>P00103EEA</li>
+                                            <li><label for="">할인판매가</label>24,700원</li>
+                                            <li>
+                                                <p>바스트 페이크 포켓으로 입체적이면서도 밋밋함이 없으며
+                                                    전체적으로 여유있는 핏감으로 편안하게 착용되어집니다!
+                                                    스커트나 슬랙스, 데님팬츠 등
+                                                    다양한 바텀 아이템과 두루 매치하기 좋아 추천드려요~</p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="rvbox">
+                                        <!-- 같은 상품 리뷰 목록 -->
+                                        <ul class="list-group same-review-list">
+                                            <li class="list-group-item">
+                                                <a href="#">같은상품 리뷰목록입니다.</a>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <a href="#">같은상품 리뷰목록입니다.</a>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <a href="#">같은상품 리뷰목록입니다.</a>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <a href="#">같은상품 리뷰목록입니다.</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+
+                    <!-- 상품문의 -->
                     <div id="qna" class="tab-pane fade">
-                        <h3>Menu 2</h3>
-                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+                        <h2>상품문의</h2>
+                        <p>게시판 특성에 맞게 카테고리 선택하여 문의 글 남겨주시면 보다 빠른 답변을 받으실 수 있습니다.</p>            
+                        <table class="table text-center">
+                            <thead style="background-color: #fcedf3;">
+                                <tr>
+                                    <th>번호</th>
+                                    <th class="col-md-7">제목</th>
+                                    <th>작성자</th>
+                                    <th class="col-md-2">작성일</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>3</td>
+                                    <td>사이즈 문의</td>
+                                    <td>홍길동</td>
+                                    <td>2024.02.15 14:50</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>배송 문의</td>
+                                    <td>김철수</td>
+                                    <td>2024.02.11 18:15</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>상품 문의</td>
+                                    <td>김순이</td>
+                                    <td>2024.02.06 19:03</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
-            </div>
-
-            <div class="row justify-content-center">
-                <img src="images/pd/121-01.jpg" alt="121-01">
-                <img src="images/pd/121-0.gif" alt="121-0">
-                <img src="images/pd/121-1.jpg" alt="121-1">
-                <img src="images/pd/121-2.jpg" alt="121-2">
             </div>
         </div>
     </section>
@@ -401,6 +518,36 @@
             <p class="text-center pt-3">Copyright &copy; ush's all right reserved. maked 2024.</p>
         </div>
     </footer>
+
+    <div class="remotecontrol">
+        <a href="#"><i class="ri-arrow-up-s-line"></i></a>
+        <a href="#"><i class="ri-arrow-down-s-line"></i></a>
+    </div>
+
+    <div class="cartview">
+        <div class="cartin">
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <div class="d-flex">
+                        <a href="#"><img src="images/pd/040.jpg" alt="040" class="img-thumbnail"></a>
+                        <div class="cart-txt">
+                            <h1><a href="#">상품이름</a></h1>
+                            <p>옵션</p>
+                        </div>
+                    </div>
+                    <div class="c-money">
+                        <span>1</span>
+                        250,000원
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <button class="btn btn-sm-line">바로 구매</button>
+        <button class="btn btn-sm-line">장바구니 이동</button>
+        <div class="cartview-close">
+            <i class="ri-close-line"></i>
+        </div>
+    </div>
 
     <!-- REMOTECONTROL -->
     <div class="remotecontrol">

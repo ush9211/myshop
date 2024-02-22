@@ -120,7 +120,7 @@ $(function(){
             }
 
             // input 타입 hidden에 정보 저장
-            $('.subtitle').eq(totalTextLength).val('${colortxt} - ${sizetxt}');
+            $('.subtitle').eq(totalTextLength).val(`${colortxt} - ${sizetxt}`);
 
             // 가격 저장
             $('.toptmoney').eq(totalTextLength).val(tmoney);
@@ -220,26 +220,78 @@ $(function(){
         
     });
 
-    // 본문 상세보기 스크립트
+
+
+    const opt = {
+    infinite: true,
+    slidesToShow: 8,
+    slidesToScroll: 1,
+    centerMode: true,
+    autoplay: true
+    };
+
+    //본문 상세보기 스크립트
     $('.nav-pills li').click(function(){
         $('.nav-pills>li').removeClass('active');
         $(this).addClass('active');
-    })
-    viewReview();
+        const link = $(this).find('a').attr('href');
+        if(link == "#review"){
+        setTimeout(function(){
+            $('.review-photo').not('.slick-initialized').slick(opt);   
+        }, 200);
+        }else{
+            $('.review-photo').slick('unslick');
+        }
+    });
 
-    // 리뷰 슬릭
-    $('#review').show(function(){
-        $('.review-photo').slick({
-            slidesToShow : 8,
-            slidesToScroll : 1,
-            centerMode : true,
-            focusOnSelect : true
-        });
+
+    // // 리뷰 슬릭
+    // $('#review').show(function(){
+    //     $('.review-photo').slick({
+    //         slidesToShow : 8,
+    //         slidesToScroll : 1,
+    //         centerMode : true,
+    //         focusOnSelect : true
+    //     });
+    // });
+
+
+    // 리뷰 팝업창
+    $('.imgs').click(function(e){
+
+        // a 태그에 링크#을 걸어놓은것을 무효화시킴
+        e.preventDefault();
+
+        // 이미지 소스 가져오기 (getter)
+        const src = $(this).find('img').attr('src');
+        const alt = $(this).find('img').attr('alt');
+
+        // 이미지 소스 바꾸기 (setter)
+        $('.imgbox').find('img').attr('src', src).attr('alt', alt);
+
+        // 팝업 페이드인
+        $('.rp').fadeIn();
+    });
+
+    // 팝업창 닫기
+    $(document).mouseup(function(e){
+
+        // 현재 누르는곳이 어디로 찍히는지 확인하는 콘솔창 띄우기
+        // console.log(e.target);
+
+        // 팝업창 밖을 누르면 닫히는 식
+        if($('.rp').has(e.target).length === 0){
+            $('.rp').fadeOut();
+        }
+    });
+
+    // x 버튼을 누르면 닫히는 식
+    $('.rp-close').click(function(e){
+        $('.rp').fadeOut();
     });
 
 });
-    
-    
+
 
 
 // 리뷰 별점비율 함수
