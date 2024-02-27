@@ -50,7 +50,7 @@ $(function(){
 
     let opthtml = `
                     <ul class="add-opt">
-                        <li class="d-flex align-items-center">
+                        <li class="d-md-flex align-items-center">
                             <div class="total-text col"></div>
                             <ul class="add-opts col">
                                 <li class="addbox d-flex align-items-center">
@@ -221,13 +221,27 @@ $(function(){
     });
 
 
+    // 카트로 이동
+    $('#cart').click(function(){
+        window.location.href="cart.html";
+    })
 
     const opt = {
-    infinite: true,
-    slidesToShow: 8,
-    slidesToScroll: 1,
-    centerMode: true,
-    autoplay: true
+        infinite: true,
+        slidesToShow: 8,
+        slidesToScroll: 1,
+        centerMode: true,
+        autoplay: true,
+        responsive: [{
+            breakpoint: 768,
+            settings: {
+                infinite: true,
+                slidesToShow: 2,
+                slidesToScroll: 1,
+                centerMode: false,
+                autoplay: true
+            }
+        }]
     };
 
     //본문 상세보기 스크립트
